@@ -30,6 +30,12 @@
             الادارة
           </span>
         </a>
+        <a class="navItem"   routerLink="/monthlyReport" *ngIf="authService.isAuth">
+          <i class="fas fa-table"></i>
+          <span>
+            التقرير
+          </span>
+        </a>
         <a class="navItem"   (click)="openStatisticsPopup()" >
           <i class="fa-solid fa-chart-line"></i>
           <span>
