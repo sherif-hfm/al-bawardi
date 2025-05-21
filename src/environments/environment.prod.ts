@@ -1,6 +1,7 @@
 export const environment = {
   production: true,
   settings:{
-    apiUrl:'https://apis.al-bawardi.info'
+    apiUrl1:'https://apis.al-bawardi.info',
+    apiUrl:'https://api3.al-bawardi.info'
   }
 };
