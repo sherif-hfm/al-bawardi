@@ -28,10 +28,10 @@
     }*/
 
 .RmDatePicker_container_focus {
-    border: 1px solid #7bc1f7;
-    box-shadow: 0 0 8px #7bc1f7;
+    border: 1px solid #2a7d3f;
+    box-shadow: 0 0 8px rgba(42, 125, 63, 0.5);
     outline: 0;
-    webkit-box-shadow: 0 0 8px #7bc1f7;
+    webkit-box-shadow: 0 0 8px rgba(42, 125, 63, 0.5);
 }
 
     .RmDatePicker-container .w3-input {
@@ -64,10 +64,10 @@
     background-color: #fefefe;
     -webkit-transition: .1s;
     transition: .1s;
-    color: teal;
+    color: #2a7d3f;
     font-size: 18px;
     line-height: 24px;
-    border: solid 1px #008080;
+    border: solid 1px #2a7d3f;
     box-shadow: inset 0px 0px 5px -2px #444;
 }
 
@@ -78,13 +78,13 @@
     width: 25px;
     left: 0px;
     bottom: 0px;
-    background-color: teal;
+    background-color: #2a7d3f;
     -webkit-transition: .1s;
     transition: .1s;
 }
 
 .RmDatePicker-switch input:focus + .RmDatePicker-slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #2a7d3f;
 }
 
 .RmDatePicker-switch input:checked + .RmDatePicker-slider:before {
@@ -109,15 +109,15 @@
     margin: 4px;
 }
     .RmDatePicker-Text:focus {
-        box-shadow: 0 0 0px #7bc1f7 !important;
+        box-shadow: 0 0 0px rgba(42, 125, 63, 0.5) !important;
         outline: 0;
-        webkit-box-shadow: 0 0 0px #7bc1f7 !important;
+        webkit-box-shadow: 0 0 0px rgba(42, 125, 63, 0.5) !important;
     }
 
 .RmDatePicker-btns {
     padding-top: 5px;
     font-size: 20px !important;
-    color: #297289;
+    color: #2a7d3f;
     position: absolute;
     left: 7px;
     top: 5px;
@@ -139,7 +139,7 @@
     width: 300px;
     border-style: solid;
     border-width: 1px;
-    border-color: #009688;
+    border-color: #2a7d3f;
     border-radius:3px;
 }
 
@@ -148,14 +148,14 @@
     flex-direction: row-reverse;
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: #009688 !important;
+    background-color: #2a7d3f !important;
     height: auto;
     color: #fff;
     font-weight: bold;
     font-size: 15px;
 }
 .RmDatePicker-years-list {
-    background-color: #009688 !important;
+    background-color: #2a7d3f !important;
     color: #fff;
     font-weight: bold;
     font-size: 15px;
@@ -166,19 +166,19 @@
 }
 .RmDatePicker-year-item {
     background-color: #FFF;
-    color: #4f85ae;
+    color: #2a7d3f;
     font-family: 'Cairo', sans-serif;
 }
 
 .RmDatePicker-month-item {
     background-color: #FFF;
-    color: #4f85ae;
+    color: #2a7d3f;
     font-family: 'Cairo', sans-serif;
     font-weight: 800;
 }
 
 .RmDatePicker-months-list {
-    background-color: #009688 !important;
+    background-color: #2a7d3f !important;
     color: #fff;
     font-weight: 800;
     font-size: 15px;
@@ -190,7 +190,7 @@
 
 .RmDatePicker-Footer {
     height: 20px;
-    background-color: #009688;
+    background-color: #2a7d3f;
 }
 
 .monthView {
@@ -203,7 +203,7 @@
 }
 
     .monthView .weekDays {
-        background-color: #009688;
+        background-color: #2a7d3f;
         color: white;
         width: 42.80px;
         text-align: center;
@@ -213,7 +213,7 @@
 
     .monthView .monthDay {
         background-color: white;
-        color: #075483;
+        color: #1e5c2e;
         width: 42.70px;
         height: 43px;
         display: flex;
@@ -230,9 +230,9 @@
         }
 
             .monthView .monthDay span:hover {
-                border: 1px solid #156580;
+                border: 1px solid #1e5c2e;
                 border-radius: 50%;
-                background-color: #4f85ae;
+                background-color: #3d9e54;
                 color: #fff;
                 width: 33px;
                 height: 33px;
@@ -241,9 +241,9 @@
             }
 
     .monthView .currentDay span {
-        border: 1px solid #156580;
+        border: 1px solid #1e5c2e;
         border-radius: 50%;
-        background-color: #009688 ;
+        background-color: #2a7d3f;
         color: #fff;
         width: 33px;
         height: 33px;
@@ -252,9 +252,9 @@
     }
 
     .monthView .selectedDay span {
-        border: 1px solid #156580;
+        border: 1px solid #1e5c2e;
         border-radius: 50%;
-        background-color: #4f85ae;
+        background-color: #3d9e54;
         color: #fff;
         width: 33px;
         height: 33px;

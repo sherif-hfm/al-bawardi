@@ -11,7 +11,7 @@
   left: 0;
   right: 0;
   z-index: 100;
-  background: linear-gradient(135deg,var(--mainTextColor) 0%,#1a4a9e 100%);
+  background: linear-gradient(135deg,var(--mainTextColor) 0%,#1e5c2e 100%);
   color: #fff;
   padding: 20px;
   text-align: center;
@@ -144,7 +144,7 @@
 }
 
 .prayer-header {
-  background: linear-gradient(135deg,var(--mainTextColor) 0%,#2d5aa8 100%);
+  background: linear-gradient(135deg,var(--mainTextColor) 0%,#1e5c2e 100%);
   color: #fff;
   padding: 15px 20px;
   border-radius: 15px 15px 0 0;
@@ -221,7 +221,7 @@
   font-weight: bold;
   color: var(--mainTextColor);
   font-size: 15px;
-  background: #e8eef5;
+  background: #e8f5e9;
 }
 
 .name-cell {

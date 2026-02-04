@@ -26,7 +26,7 @@
     box-shadow: 0 5px 10px rgb(40 64 37 / 50%);
     /* Scrollbar: thin for Firefox */
     scrollbar-width: thin;
-    scrollbar-color: rgba(30, 58, 95, 0.45) rgba(30, 58, 95, 0.08);
+    scrollbar-color: rgba(42, 125, 63, 0.45) rgba(42, 125, 63, 0.08);
 }
 
 /* Custom scrollbar for WebKit (Chrome, Safari, Edge) */
@@ -35,21 +35,21 @@
 }
 
 .modalBox::-webkit-scrollbar-track {
-    background: rgba(30, 58, 95, 0.06);
+    background: rgba(42, 125, 63, 0.06);
     border-radius: 4px;
 }
 
 .modalBox::-webkit-scrollbar-thumb {
-    background: rgba(30, 58, 95, 0.35);
+    background: rgba(42, 125, 63, 0.35);
     border-radius: 4px;
 }
 
 .modalBox::-webkit-scrollbar-thumb:hover {
-    background: rgba(30, 58, 95, 0.5);
+    background: rgba(42, 125, 63, 0.5);
 }
 
 .modalBox::-webkit-scrollbar-thumb:active {
-    background: rgba(30, 58, 95, 0.6);
+    background: rgba(42, 125, 63, 0.6);
 }
 .closeBtn{
     position: relative;
