@@ -14,7 +14,7 @@ export class FuneralService {
 
    getTodayFuneral(){
     console.log('getTodayFuneral');
-    return this.http.get( this.settings.ApiBaseUrl +  '/funeral' ,{observe:'body',responseType:'json'});
+    return this.http.get( this.settings.ApiBaseUrl +  '/funeral/today-funeral-v2' ,{observe:'body',responseType:'json'});
   }
   getStatistics(){
     console.log('getStatistics');
@@ -63,5 +63,10 @@ export class FuneralService {
   deleteFuneral(id: any){
     console.log('deleteFuneral');
     return this.http.delete(this.settings.ApiBaseUrl + '/funeral/del/' + id );
+  }
+
+  getTodayDetails(){
+    console.log('getTodayDetails');
+    return this.http.get( this.settings.ApiBaseUrl +  '/funeral/today-details' ,{observe:'body',responseType:'json'});
   }
 }

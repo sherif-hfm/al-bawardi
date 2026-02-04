@@ -1,0 +1,94 @@
+<div class="today-view-container">
+  <!-- Sticky Header -->
+  <div class="sticky-header">
+    <div class="header-title">
+      جنائز جامع البواردي 
+    </div>
+    <div class="header-dates">
+      <div class="hijri-date">{{getHijriDateFormatted()}}</div>
+      <div class="gregorian-date">{{getGregorianDateFormatted()}}</div>
+    </div>
+  </div>
+
+  <!-- Loading State -->
+  <div class="loading-container" *ngIf="isLoading">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">جاري تحميل البيانات...</div>
+  </div>
+
+  <!-- Error State -->
+  <div class="error-container" *ngIf="errorMessage && !isLoading">
+    <div class="error-icon">
+      <i class="fa-solid fa-exclamation-triangle"></i>
+    </div>
+    <div class="error-text">{{errorMessage}}</div>
+    <button class="retry-btn" (click)="refreshData()">إعادة المحاولة</button>
+  </div>
+
+  <!-- No Data State -->
+  <div class="no-data-container" *ngIf="!isLoading && !errorMessage && groupedFunerals.length === 0">
+    <div class="no-data-icon">
+      <i class="fa-solid fa-inbox"></i>
+    </div>
+    <div class="no-data-text">لا توجد جنائز لهذا اليوم</div>
+  </div>
+
+  <!-- Funeral Data -->
+  <div class="content-container" *ngIf="!isLoading && !errorMessage && groupedFunerals.length > 0">
+    
+    <!-- Total Summary -->
+    <div class="total-summary">
+      <span class="total-label">إجمالي الجنائز اليوم:</span>
+      <span class="total-number">{{arabicNums.toArabicNum(getTotalFunerals().toString())}}</span>
+      <span class="total-unit">جنازة</span>
+    </div>
+
+    <!-- Prayer Groups -->
+    <div class="prayer-group" *ngFor="let group of groupedFunerals">
+      <div class="prayer-header">
+        <div class="prayer-icon">
+          <i class="fa-solid fa-mosque"></i>
+        </div>
+        <div class="prayer-name">صلاة {{group.prayerName}}</div>
+        <div class="prayer-count">{{arabicNums.toArabicNum(group.funerals.length.toString())}} جنازة</div>
+      </div>
+
+      <!-- Funeral Grid Table -->
+      <div class="funeral-grid">
+        <!-- Table Header -->
+        <div class="grid-header">
+          <div class="grid-cell header-cell">اسم المتوفى</div>
+          <div class="grid-cell header-cell">الجنس</div>
+          <div class="grid-cell header-cell">مكان الدفن</div>
+          <div class="grid-cell header-cell">رقم الإسعاف</div>
+          <div class="grid-cell header-cell">رقم القبر</div>
+          <div class="grid-cell header-cell">ملاحظات</div>
+        </div>
+        <!-- Table Rows -->
+        <div class="grid-row" *ngFor="let funeral of group.funerals" [ngClass]="{
+          'row-male': funeral.sexId === 'M',
+          'row-female': funeral.sexId === 'W' || funeral.sexId === 'F',
+          'row-child': funeral.sexId !== 'M' && funeral.sexId !== 'W' && funeral.sexId !== 'F'
+        }">
+          <div class="grid-cell name-cell">{{funeral.deadName}}</div>
+          <div class="grid-cell">
+            <span class="sex-badge" [ngClass]="{
+              'male': funeral.sexId === 'M',
+              'female': funeral.sexId === 'W' || funeral.sexId === 'F',
+              'child': funeral.sexId !== 'M' && funeral.sexId !== 'W' && funeral.sexId !== 'F'
+            }">{{funeral.sexName}}</span>
+          </div>
+          <div class="grid-cell">{{funeral.placeName || '—'}}</div>
+          <div class="grid-cell">{{funeral.ambulanceNo || '—'}}</div>
+          <div class="grid-cell">{{funeral.graveNo || '—'}}</div>
+          <div class="grid-cell notes-cell">{{funeral.notes || '—'}}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Message -->
+    <div class="footer-message">
+      رحمهم الله وأسكنهم فسيح جناته
+    </div>
+  </div>
+</div>
