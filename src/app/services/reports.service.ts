@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { SettingsService } from './settings.service';
 
 @Injectable({
@@ -12,8 +11,9 @@ export class ReportsService {
     
   }
 
-  getMonthlyReport(year: any){
+  getMonthlyReport(year: any, calendar: 'gregorian' | 'hijri' = 'gregorian'){
     console.log('getMonthlyReport');
-    return this.http.get( this.settings.ApiBaseUrl +  '/reports/monthlyReport/' + year  ,{observe:'body',responseType:'json'});
+    const params = new HttpParams().set('calendar', calendar);
+    return this.http.get( this.settings.ApiBaseUrl +  '/reports/monthlyReport/' + year  ,{params: params, observe:'body',responseType:'json'});
   }
 }

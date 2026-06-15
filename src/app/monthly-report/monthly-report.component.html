@@ -6,7 +6,17 @@
     </div>
     <div class="search">
         <div class="searchForm">
-            <label style="display:block">العام</label>
+            <div class="calendarType">
+                <label>
+                    <input type="radio" name="calendar" value="gregorian" [(ngModel)]="calendar" (ngModelChange)="onCalendarChange()">
+                    ميلادي
+                </label>
+                <label>
+                    <input type="radio" name="calendar" value="hijri" [(ngModel)]="calendar" (ngModelChange)="onCalendarChange()">
+                    هجري
+                </label>
+            </div>
+            <label style="display:block">العام {{calendar === 'hijri' ? 'الهجري' : 'الميلادي'}}</label>
             <input type="text" [(ngModel)]="searchYear">
             <button class="btn btn-success" (click)="search()">بحث</button>
         </div>

@@ -21,6 +21,12 @@
     color:var(--mainTextColor);
     font-size:18px;
 }
+.calendarType{
+    margin-bottom: 10px;
+}
+.calendarType label{
+    margin-left: 15px;
+}
 
   .btn{
       margin-right: 15px;

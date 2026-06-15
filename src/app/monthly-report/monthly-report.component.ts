@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService} from '../services/auth.service';
 import { ArabicNumsService} from '../services/arabic-nums.service';
 import { ReportsService} from '../services/reports.service';
+
+type CalendarType = 'gregorian' | 'hijri';
 
 @Component({
   selector: 'app-monthly-report',
@@ -11,6 +12,7 @@ import { ReportsService} from '../services/reports.service';
 export class MonthlyReportComponent implements OnInit {
 
   searchYear:string='';
+  calendar: CalendarType='gregorian';
   funeralList:any[]=[];
   
   constructor(public reportsService: ReportsService,public arabicNums: ArabicNumsService) {
@@ -21,7 +23,7 @@ export class MonthlyReportComponent implements OnInit {
   }
 
   getMonthlyReport(){
-    this.reportsService.getMonthlyReport(this.searchYear).subscribe({
+    this.reportsService.getMonthlyReport(this.searchYear, this.calendar).subscribe({
       next:(data:any)=>{
        console.log(data);
        this.funeralList=data;
@@ -34,5 +36,9 @@ export class MonthlyReportComponent implements OnInit {
   }
   search(){
     this.getMonthlyReport();
+  }
+
+  onCalendarChange(){
+    this.funeralList=[];
   }
 }
